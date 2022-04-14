@@ -102,3 +102,8 @@ a.degrees-scale {
 .snapshot-numbers {
   margin-left: 30px;
 }
+.byline {
+  text-align: left;
+  margin-left: 100px;
+  font-size: small;
+}
