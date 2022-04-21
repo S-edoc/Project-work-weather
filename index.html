@@ -35,17 +35,19 @@
           class="form-control search-bar"
           id="search-bar-input"
         />
+        <input
+          type="submit"
+          value="Search"
+          class="btn btn-primary search-button"
+        />
+        <button
+          type="button"
+          class="btn btn-primary current-button"
+          id="current-search-button"
+        >
+          Current
+        </button>
       </form>
-      <button type="button" class="btn btn-primary search-button">
-        Search
-      </button>
-      <button
-        type="button"
-        class="btn btn-primary current-button"
-        id="current-search-button"
-      >
-        Current
-      </button>
       <div class="shadow p-3 mb-5 bg-body rounded">
         <div class="todays-info-container">
           <div class="row">
@@ -110,12 +112,10 @@
             </div>
 
             <div class="col-9 city-box">
-              <h1 id="city-heading">Quezon City</h1>
-              <h5 id="time-current">11:43AM GMT Sunday March 20, 2022</h5>
+              <h1 id="city-heading"></h1>
+              <h5 id="time-current"></h5>
               <div class="row">
-                <div class="col-4 current-temp" id="current-temperature">
-                  23°C
-                </div>
+                <div class="col-4 current-temp" id="current-temperature"></div>
                 <div class="col-2 temp-range">
                   <div class="current-min">Min 0°C</div>
                   <div class="current-max">Max 30°C</div>

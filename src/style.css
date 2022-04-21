@@ -1,5 +1,6 @@
 .container {
   font-family: "Abel", sans-serif;
+  max-width: 90%;
 }
 
 h1 {

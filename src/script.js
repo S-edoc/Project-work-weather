@@ -32,7 +32,7 @@ function formatDate(date) {
   let currentHour = String(date.getHours()).padStart(2, "0");
   let currentMinute = String(date.getMinutes()).padStart(2, "0");
 
-  let currentDateTime = `${currentHour}:${currentMinute} ${currentDay} ${currentMonth} ${currentDate}, ${currentYear}`;
+  let currentDateTime = `Last Updated ${currentHour}:${currentMinute} ${currentDay} ${currentMonth} ${currentDate}, ${currentYear}`;
   return currentDateTime;
 }
 
