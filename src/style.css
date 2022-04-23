@@ -65,10 +65,19 @@ h5 {
   text-align: center;
 }
 
+.units,
 a.degrees-scale {
-  text-decoration: none;
   color: #2da0d8;
+  font-size: 30px;
+  text-decoration: none;
 }
+
+.units a.active {
+  font-size: 40px;
+  text-decoration: none;
+  background-color: none;
+}
+
 .todays-description,
 .current-weather-icon {
   text-align: center;

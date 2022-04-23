@@ -72,6 +72,7 @@ function showWeatherValues(position) {
   document.querySelector("#current-temperature").innerHTML = `${Math.round(
     position.data.main.temp
   )}°C`;
+  celciusTemperature = position.data.main.temp;
   document.querySelector("#wind-speed").innerHTML = Math.round(
     position.data.wind.speed
   );
@@ -83,37 +84,45 @@ function showWeatherValues(position) {
     "src",
     `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`
   );
+
   let todaysDescriptionInfo = position.data.weather[0].description;
   let todaysDescriptionSentence = document.querySelector("#todays-description");
   todaysDescriptionSentence.innerHTML = `Today's weather shows ${todaysDescriptionInfo}`;
+  timeHeading.innerHTML = formatDate(dateTime);
 }
 
-// function convertCelcius(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector("#current-temperature");
-//   currentTemp.innerHTML = "23°C";
-// }
-// function convertFahrenheit(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector("#current-temperature");
-//   currentTemp.innerHTML = "88°F";
-// }
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let convertTemperature = document.querySelector("#current-temperature");
+  let formulaFahrenheit = (celciusTemperature * 9) / 5 + 32;
+  convertTemperature.innerHTML = `${Math.round(formulaFahrenheit)}°F`;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function convertCelcius(event) {
+  event.preventDefault();
+  let convertTemperature = document.querySelector("#current-temperature");
+  convertTemperature.innerHTML = `${Math.round(celciusTemperature)}°C`;
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertCelcius);
 
 //Current time Display
 let dateTime = new Date();
 let timeHeading = document.querySelector("#time-current");
-timeHeading.innerHTML = formatDate(dateTime);
 
 //City Search Display
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmission);
-
-//Celsius and Fahrenheit
-// let tempConversionCelcius = document.querySelector("#celcius-convert");
-// let tempConversionFahrenheit = document.querySelector("#fahrenheit-convert");
-
-// tempConversionCelcius.addEventListener("click", convertCelcius);
-// tempConversionFahrenheit.addEventListener("click", convertFahrenheit);
 
 //Displaying Current location data
 let currentButton = document.querySelector("#current-search-button");

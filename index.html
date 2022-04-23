@@ -52,7 +52,7 @@
         <div class="todays-info-container">
           <div class="row">
             <div class="col-3 todays-box">
-              <div class="shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="shadow-sm p-3 bg-body rounded">
                 <div class="todays-heading">Today's Numbers</div>
                 <div class="row">
                   <div class="col-5 todays-titles">
@@ -119,13 +119,14 @@
                 <div class="col-2 temp-range">
                   <div class="current-min">Min 0°C</div>
                   <div class="current-max">Max 30°C</div>
-                  <a href="#" class="degrees-scale" id="celcius-convert"
-                    >C°|
-                  </a>
-
-                  <a href="#" class="degrees-scale" id="fahrenheit-convert"
-                    >F°</a
-                  >
+                  <span class="units">
+                    <a href="#" class="degrees-scale active" id="celcius-link"
+                      >C°</a
+                    >|
+                    <a href="#" class="degrees-scale" id="fahrenheit-link"
+                      >F°</a
+                    >
+                  </span>
                 </div>
                 <div class="col todays-icon-description">
                   <img id="todays-icon" src="" width="150" />
