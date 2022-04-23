@@ -41,6 +41,15 @@ h5 {
   font-size: 30px;
   color: rgba(29, 155, 214, 0.952);
 }
+
+.todays-description {
+  text-align: center;
+}
+
+#todays-icon {
+  display: block;
+  margin: 0 auto;
+}
 .current-temp {
   font-weight: 900px;
   font-size: 100px;

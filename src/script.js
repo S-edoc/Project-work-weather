@@ -78,6 +78,11 @@ function showWeatherValues(position) {
   document.querySelector("#humidity-value").innerHTML = Math.round(
     position.data.main.humidity
   );
+  let todaysWeatherIcon = document.querySelector("#todays-icon");
+  todaysWeatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${position.data.weather[0].icon}@2x.png`
+  );
   let todaysDescriptionInfo = position.data.weather[0].description;
   let todaysDescriptionSentence = document.querySelector("#todays-description");
   todaysDescriptionSentence.innerHTML = `Today's weather shows ${todaysDescriptionInfo}`;
