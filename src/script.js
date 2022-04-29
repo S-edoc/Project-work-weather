@@ -73,10 +73,10 @@ function showWeatherValues(position) {
     position.data.main.temp
   )}°C`;
   celciusTemperature = position.data.main.temp;
-  document.querySelector("#wind-speed").innerHTML = Math.round(
+  document.querySelector("#today-wind-speed").innerHTML = Math.round(
     position.data.wind.speed
   );
-  document.querySelector("#humidity-value").innerHTML = Math.round(
+  document.querySelector("#today-humidity-value").innerHTML = Math.round(
     position.data.main.humidity
   );
   let todaysWeatherIcon = document.querySelector("#todays-icon");
@@ -90,32 +90,6 @@ function showWeatherValues(position) {
   todaysDescriptionSentence.innerHTML = `Today's weather shows ${todaysDescriptionInfo}`;
   timeHeading.innerHTML = formatDate(dateTime);
 }
-
-function convertFahrenheit(event) {
-  event.preventDefault();
-  let convertTemperature = document.querySelector("#current-temperature");
-  let formulaFahrenheit = (celciusTemperature * 9) / 5 + 32;
-  convertTemperature.innerHTML = `${Math.round(formulaFahrenheit)}°F`;
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function convertCelcius(event) {
-  event.preventDefault();
-  let convertTemperature = document.querySelector("#current-temperature");
-  convertTemperature.innerHTML = `${Math.round(celciusTemperature)}°C`;
-  fahrenheitLink.classList.remove("active");
-  celciusLink.classList.add("active");
-}
-
-let celciusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", convertCelcius);
-
 //Current time Display
 let dateTime = new Date();
 let timeHeading = document.querySelector("#time-current");
@@ -129,3 +103,28 @@ let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
 searchCity("Quezon City");
+
+// function convertFahrenheit(event) {
+//   event.preventDefault();
+//   let convertTemperature = document.querySelector("#current-temperature");
+//   let formulaFahrenheit = (celciusTemperature * 9) / 5 + 32;
+//   convertTemperature.innerHTML = `${Math.round(formulaFahrenheit)}°F`;
+//   celciusLink.classList.remove("active");
+//   fahrenheitLink.classList.add("active");
+// }
+
+// function convertCelcius(event) {
+//   event.preventDefault();
+//   let convertTemperature = document.querySelector("#current-temperature");
+//   convertTemperature.innerHTML = `${Math.round(celciusTemperature)}°C`;
+//   fahrenheitLink.classList.remove("active");
+//   celciusLink.classList.add("active");
+// }
+
+// let celciusTemperature = null;
+
+// let fahrenheitLink = document.querySelector("#fahrenheit-link");
+// fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+// let celciusLink = document.querySelector("#celcius-link");
+// celciusLink.addEventListener("click", convertCelcius);

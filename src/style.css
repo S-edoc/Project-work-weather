@@ -42,14 +42,6 @@ h5 {
   color: rgba(29, 155, 214, 0.952);
 }
 
-.todays-description {
-  text-align: center;
-}
-
-#todays-icon {
-  display: block;
-  margin: 0 auto;
-}
 .current-temp {
   font-weight: 900px;
   font-size: 100px;
@@ -78,6 +70,11 @@ a.degrees-scale {
   background-color: none;
 }
 
+#todays-icon {
+  display: block;
+  margin: 0 auto;
+  width: 145px;
+}
 .todays-description,
 .current-weather-icon {
   text-align: center;
