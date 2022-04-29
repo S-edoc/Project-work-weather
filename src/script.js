@@ -66,6 +66,13 @@ function getCurrentPosition(position) {
   axios.get(apiUrl).then(showWeatherValues);
 }
 
+function formatTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hour = String(date.getHours()).padStart(2, "0");
+  let minutes = String(date.getMinutes()).padStart(2, "0");
+  let timeDisplay = `${hour}:${minutes} `;
+  return timeDisplay;
+}
 function showWeatherValues(position) {
   console.log(position);
   document.querySelector("#city-heading").innerHTML = position.data.name;
@@ -73,6 +80,22 @@ function showWeatherValues(position) {
     position.data.main.temp
   )}°C`;
   celciusTemperature = position.data.main.temp;
+
+  document.querySelector("#today-minimum-value").innerHTML = Math.round(
+    position.data.main.temp_min
+  );
+  document.querySelector("#today-maximum-value").innerHTML = Math.round(
+    position.data.main.temp_max
+  );
+  document.querySelector("#today-feels-like-value").innerHTML = Math.round(
+    position.data.main.feels_like
+  );
+  document.querySelector("#today-sunrise-time").innerHTML = formatTime(
+    position.data.sys.sunrise
+  );
+  document.querySelector("#today-sunset-time").innerHTML = formatTime(
+    position.data.sys.sunset
+  );
   document.querySelector("#today-wind-speed").innerHTML = Math.round(
     position.data.wind.speed
   );
