@@ -32,7 +32,7 @@ function formatDate(date) {
   let currentHour = String(date.getHours()).padStart(2, "0");
   let currentMinute = String(date.getMinutes()).padStart(2, "0");
 
-  let currentDateTime = `Last Updated ${currentHour}:${currentMinute} ${currentDay} ${currentMonth} ${currentDate}, ${currentYear}`;
+  let currentDateTime = `${currentDay} ${currentMonth} ${currentDate}, ${currentYear} </br> Last Updated ${currentHour}:${currentMinute}`;
   return currentDateTime;
 }
 
@@ -73,6 +73,43 @@ function formatTime(timestamp) {
   let timeDisplay = `${hour}:${minutes} `;
   return timeDisplay;
 }
+
+function displayForecast() {
+  let forecastInfo = document.querySelector("#forecast-weather");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2 forecast-info-container">
+            <div class="card">
+              <div class="card-body">
+                <div class="forecast-day-name" id="forecast-day">${day}</div>
+                <img src="#" width="20px" id="forecast-icon" />
+                <div class="forecast-temp-range">
+                  <span class="forecast-minimum" id="forecast-minimum-temp"
+                    >13°</span
+                  >
+                  |
+                  <span class="forecast-maximum" id="forecast-maximum-temp"
+                    >23°</span
+                  >
+                </div>
+                <div>
+                  <i class="fa-solid fa-umbrella"></i
+                  ><span class="forecast-rain" id="forecast-prob-of-rain"
+                    >10%</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastInfo.innerHTML = forecastHTML;
+}
+
 function showWeatherValues(position) {
   console.log(position);
   document.querySelector("#city-heading").innerHTML = position.data.name;
@@ -125,6 +162,7 @@ searchForm.addEventListener("submit", searchSubmission);
 let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
+displayForecast();
 searchCity("Quezon City");
 
 // function convertFahrenheit(event) {

@@ -90,9 +90,7 @@
                 <div class="col-3 current-temp" id="current-temperature"></div>
                 <div class="col-6 todays-icon-description">
                   <img id="todays-icon" src="" />
-                  <div class="todays-description" id="todays-description">
-                    Mostly Sunny with a hint of clouds.
-                  </div>
+                  <div class="todays-description" id="todays-description"></div>
                 </div>
               </div>
             </div>
@@ -103,7 +101,6 @@
                   <div class="col-6 todays-titles">
                     <div id="today-minimum">Minimum</div>
                     <div id="today-maximum">Maximum</div>
-                    <div id="today-feels-like">Feels Like</div>
                     <br />
                     <div>Sunrise</div>
                     <div>Sunset</div>
@@ -130,32 +127,8 @@
           </div>
         </div>
       </div>
-
-      <div class="forecast-container">
-        <div class="sub-heading">Five day Forecast</div>
-        <div class="row">
-          <div class="col-2 forecast-info-container">
-            <div class="forecast-day-name" id="forecast-day">Sun</div>
-            <img src="#" width="20px" id="forecast-icon" />
-            <div class="forecast-temp-range">
-              <span class="forecast-minimum" id="forecast-minimum-temp"
-                >13°</span
-              >
-              |
-              <span class="forecast-maximum" id="forecast-maximum-temp"
-                >23°</span
-              >
-            </div>
-            <div>
-              <img src="#" /><span
-                class="forecast-rain"
-                id="forecast-prob-of-rain"
-                >10%</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="sub-heading">Five day Forecast</div>
+      <div class="forecast-container" id="forecast-weather"></div>
     </div>
     <p class="byline">
       <a href="https://github.com/S-edoc/Project-work-weather" target="_blank"

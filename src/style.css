@@ -67,6 +67,7 @@ h5 {
 
 .forecast-container {
   margin-top: 40px;
+  text-align: center;
 }
 .sub-heading {
   text-align: center;
@@ -74,6 +75,10 @@ h5 {
 
 .forecast-info-container {
   padding-top: 50px;
+}
+
+.forecast-day-name {
+  font-size: 25px;
 }
 
 .byline {
