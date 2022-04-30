@@ -36,7 +36,8 @@ h5 {
   border: solid 0 #fff;
   border-radius: 4px;
 }
-.todays-heading {
+.todays-heading,
+.tomorrow-heading {
   margin-top: 0px;
   font-size: 30px;
   color: rgba(29, 155, 214, 0.952);
@@ -45,29 +46,6 @@ h5 {
 .current-temp {
   font-weight: 900px;
   font-size: 100px;
-}
-
-.temp-range {
-  margin-top: 50px;
-  margin-right: 60px;
-}
-
-.degrees-scale {
-  font-size: 30px;
-  text-align: center;
-}
-
-.units,
-a.degrees-scale {
-  color: #2da0d8;
-  font-size: 30px;
-  text-decoration: none;
-}
-
-.units a.active {
-  font-size: 40px;
-  text-decoration: none;
-  background-color: none;
 }
 
 #todays-icon {
@@ -87,37 +65,17 @@ a.degrees-scale {
   font-size: 100px;
 }
 
-.lower-info-container {
+.forecast-container {
   margin-top: 40px;
 }
-.sub-heading,
-.snapshot-day,
-.snapshot-description {
+.sub-heading {
   text-align: center;
 }
 
-.favourite-cities,
-.forecast-weather,
-.snapshot-titles,
-.snapshot-numbers {
-  list-style: none;
-}
-
-.favourite-cities-container {
-  padding-top: 50px;
-}
-
-.forecast-box-container {
-  padding-left: 50px;
-}
 .forecast-info-container {
   padding-top: 50px;
 }
 
-.snapshot-titles,
-.snapshot-numbers {
-  margin-left: 30px;
-}
 .byline {
   text-align: left;
   margin-left: 100px;

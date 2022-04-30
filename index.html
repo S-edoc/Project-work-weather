@@ -83,27 +83,47 @@
               </div>
             </div>
 
-            <div class="col-9 city-box">
+            <div class="col-6 city-box">
               <h1 id="city-heading"></h1>
               <h5 id="time-current"></h5>
               <div class="row">
                 <div class="col-3 current-temp" id="current-temperature"></div>
-
-                <div class="col-4 todays-icon-description">
+                <div class="col-6 todays-icon-description">
                   <img id="todays-icon" src="" />
                   <div class="todays-description" id="todays-description">
                     Mostly Sunny with a hint of clouds.
                   </div>
                 </div>
-                <div class="col-2 temp-range">
-                  <span class="units">
-                    <a href="#" class="degrees-scale active" id="celcius-link"
-                      >C°</a
-                    >|
-                    <a href="#" class="degrees-scale" id="fahrenheit-link"
-                      >F°</a
-                    >
-                  </span>
+              </div>
+            </div>
+            <div class="col-3 tomorrow-box">
+              <div class="shadow-sm p-3 bg-body rounded">
+                <div class="tomorrow-heading">Tomorrow's Numbers</div>
+                <div class="row">
+                  <div class="col-6 todays-titles">
+                    <div id="today-minimum">Minimum</div>
+                    <div id="today-maximum">Maximum</div>
+                    <div id="today-feels-like">Feels Like</div>
+                    <br />
+                    <div>Sunrise</div>
+                    <div>Sunset</div>
+                    <br />
+                    <div>Humidity</div>
+                    <div>Wind Speed</div>
+                    <br />
+                  </div>
+                  <div class="col-6 tomorrows-numbers">
+                    <div><span id="tomorrow-minimum-value"></span>°C</div>
+                    <div><span id="tomorrow-maximum-value"></span>°C</div>
+                    <div><span id="tomorrow-feels-like-value"></span>°C</div>
+                    <br />
+                    <div><span id="tomorrow-sunrise-time"></span>AM</div>
+                    <div><span id="tomorrow-sunset-time"></span>PM</div>
+                    <br />
+                    <div><span id="tomorrow-humidity-value"></span>%</div>
+                    <div><span id="tomorrow-wind-speed"></span> km/hr</div>
+                    <br />
+                  </div>
                 </div>
               </div>
             </div>
@@ -111,99 +131,27 @@
         </div>
       </div>
 
-      <div class="row lower-info-container">
-        <div class="col-3 favourite-box">
-          <div class="sub-heading">List of Favourite Cities</div>
-          <div class="favourite-cities-container">
-            <ul>
-              <li class="favourite-cities"><a href="">Tokyo</a></li>
-              <li class="favourite-cities"><a href="">Auckland</a></li>
-              <li class="favourite-cities"><a href="">London</a></li>
-              <li class="favourite-cities"><a href="">Chicago</a></li>
-              <li class="favourite-cities"><a href="">Phuket</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col forecast-box-container">
-          <div class="sub-heading">Five day Forecast</div>
-          <div class="forecast-info-container">
-            <div class="row">
-              <div class="col">
-                <div class="forecast-day">Monday</div>
-                <div class="forecast-day">Tuesday</div>
-                <div class="forecast-day">Wednesday</div>
-                <div class="forecast-day">Thursday</div>
-                <div class="forecast-day">Friday</div>
-              </div>
-              <div class="col">
-                <ul>
-                  <li class="forecast-weather">
-                    <i class="fa-solid fa-sun weather-icon"></i>
-                  </li>
-                  <li class="forecast-weather">
-                    <i class="fa-solid fa-cloud-rain weather-icon"></i>
-                  </li>
-                  <li class="forecast-weather">
-                    <i class="fa-solid fa-cloud-rain weather-icon"></i>
-                  </li>
-                  <li class="forecast-weather">
-                    <i class="fa-solid fa-cloud-sun weather-icon"></i>
-                  </li>
-                  <li class="forecast-weather">
-                    <i class="fa-solid fa-cloud-bolt weather-icon"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="col">
-                <div class="forecast-temp">
-                  <span class="minimum-forecast">0°C</span>
-                  <span class="maximum-forecast">30°C</span>
-                </div>
-                <div class="forecast-temp">
-                  <span class="minimum-forecast">0°C</span>
-                  <span class="maximum-forecast">30°C</span>
-                </div>
-                <div class="forecast-temp">
-                  <span class="minimum-forecast">0°C</span>
-                  <span class="maximum-forecast">30°C</span>
-                </div>
-                <div class="forecast-temp">
-                  <span class="minimum-forecast">0°C</span>
-                  <span class="maximum-forecast">30°C</span>
-                </div>
-                <div class="forecast-temp">
-                  <span class="minimum-forecast">0°C</span>
-                  <span class="maximum-forecast">30°C</span>
-                </div>
-              </div>
+      <div class="forecast-container">
+        <div class="sub-heading">Five day Forecast</div>
+        <div class="row">
+          <div class="col-2 forecast-info-container">
+            <div class="forecast-day-name" id="forecast-day">Sun</div>
+            <img src="#" width="20px" id="forecast-icon" />
+            <div class="forecast-temp-range">
+              <span class="forecast-minimum" id="forecast-minimum-temp"
+                >13°</span
+              >
+              |
+              <span class="forecast-maximum" id="forecast-maximum-temp"
+                >23°</span
+              >
             </div>
-            <div class="col"></div>
-          </div>
-        </div>
-
-        <div class="col snapshot-box">
-          <div class="sub-heading">Tomorrow's Numbers Snapshot</div>
-          <div class="snapshot-day">Monday</div>
-          <div class="snapshot-description">
-            <i class="fa-solid fa-sun weather-icon"></i> Sunny
-          </div>
-          <div class="row">
-            <div class="col">
-              <ul>
-                <li class="snapshot-titles">Sunrise</li>
-                <li class="snapshot-titles">Sunset</li>
-                <li class="snapshot-titles">Humidity</li>
-                <li class="snapshot-titles">Wind</li>
-              </ul>
-            </div>
-            <div class="col">
-              <ul>
-                <li class="snapshot-numbers">04:47AM</li>
-                <li class="snapshot-numbers">06:32PM</li>
-                <li class="snapshot-numbers">52%</li>
-                <li class="snapshot-numbers">4km/hr</li>
-              </ul>
+            <div>
+              <img src="#" /><span
+                class="forecast-rain"
+                id="forecast-prob-of-rain"
+                >10%</span
+              >
             </div>
           </div>
         </div>
