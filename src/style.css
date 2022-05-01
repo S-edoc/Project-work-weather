@@ -32,9 +32,9 @@ h5 {
   top: -60px;
 }
 
-.todays-box {
+.todays-info-container {
   border: solid 0 #fff;
-  border-radius: 4px;
+  border-radius: 20px;
 }
 .todays-heading,
 .tomorrow-heading {
@@ -51,7 +51,7 @@ h5 {
 #todays-icon {
   display: block;
   margin: 0 auto;
-  width: 145px;
+  width: 150px;
 }
 .todays-description,
 .current-weather-icon {
@@ -70,12 +70,22 @@ h5 {
 }
 .sub-heading {
   text-align: center;
+  font-size: 30px;
 }
 
 .forecast-info-container {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
+.fa-umbrella {
+  opacity: 70%;
+}
+
+.card {
+  border: none;
+  background-color: #97bacc;
+  border-radius: 20px;
+}
 .forecast-day-name {
   font-size: 25px;
 }

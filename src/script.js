@@ -89,7 +89,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         ` <div class="col-2 forecast-info-container">
-            <div class="card">
+            <div class="card border-right">
               <div class="card-body">
                 <div class="forecast-day-name" id="forecast-day">${formatDay(
                   forecastValue.dt
@@ -109,7 +109,7 @@ function displayForecast(response) {
                 <div>
                   <i class="fa-solid fa-umbrella"></i
                   ><span class="forecast-rain" id="forecast-prob-of-rain"
-                    >${Math.round(forecastValue.pop * 100)}%</span
+                    > ${Math.round(forecastValue.pop * 100)}%</span
                   >
                 </div>
               </div>
@@ -184,7 +184,7 @@ function showWeatherValues(position) {
 
   let todaysDescriptionInfo = position.data.weather[0].description;
   let todaysDescriptionSentence = document.querySelector("#todays-description");
-  todaysDescriptionSentence.innerHTML = `Today's weather shows ${todaysDescriptionInfo}`;
+  todaysDescriptionSentence.innerHTML = `The current weather shows ${todaysDescriptionInfo}`;
   timeHeading.innerHTML = formatDate(dateTime);
 
   retrieveForecast(position.data.coord);
