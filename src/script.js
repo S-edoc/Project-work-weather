@@ -74,25 +74,36 @@ function formatTime(timestamp) {
   return timeDisplay;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
   let forecastInfo = document.querySelector("#forecast-weather");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col-2 forecast-info-container">
+  forecast.forEach(function (forecastValue, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2 forecast-info-container">
             <div class="card">
-              <div class="ca>
-                <div class="forecast-day-name" id="forecast-day">${day}</div>
-                <img src="#" width="20px" id="forecast-icon" />
+              <div class="card-body">
+                <div class="forecast-day-name" id="forecast-day">${formatDay(
+                  forecastValue.dt
+                )}</div>
+                <img src= "http://openweathermap.org/img/wn/${
+                  forecastValue.weather[0].icon
+                }@2x.png"/>
                 <div class="forecast-temp-range">
                   <span class="forecast-minimum" id="forecast-minimum-temp"
-                    >°</span
+                    >${Math.round(forecastValue.temp.min)}°</span
                   >
                   |
                   <span class="forecast-maximum" id="forecast-maximum-temp"
-                    >23°</span
+                    >${Math.round(forecastValue.temp.max)}°</span
                   >
                 </div>
                 <div>
@@ -104,6 +115,7 @@ function displayForecast(response) {
               </div>
             </div>
           </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -173,28 +185,3 @@ let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
 searchCity("Quezon City");
-
-// function convertFahrenheit(event) {
-//   event.preventDefault();
-//   let convertTemperature = document.querySelector("#current-temperature");
-//   let formulaFahrenheit = (celciusTemperature * 9) / 5 + 32;
-//   convertTemperature.innerHTML = `${Math.round(formulaFahrenheit)}°F`;
-//   celciusLink.classList.remove("active");
-//   fahrenheitLink.classList.add("active");
-// }
-
-// function convertCelcius(event) {
-//   event.preventDefault();
-//   let convertTemperature = document.querySelector("#current-temperature");
-//   convertTemperature.innerHTML = `${Math.round(celciusTemperature)}°C`;
-//   fahrenheitLink.classList.remove("active");
-//   celciusLink.classList.add("active");
-// }
-
-// let celciusTemperature = null;
-
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", convertFahrenheit);
-
-// let celciusLink = document.querySelector("#celcius-link");
-// celciusLink.addEventListener("click", convertCelcius);
