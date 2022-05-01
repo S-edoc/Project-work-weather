@@ -74,7 +74,7 @@ function formatTime(timestamp) {
   return timeDisplay;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastInfo = document.querySelector("#forecast-weather");
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = `<div class="row">`;
@@ -83,12 +83,12 @@ function displayForecast() {
       forecastHTML +
       ` <div class="col-2 forecast-info-container">
             <div class="card">
-              <div class="card-body">
+              <div class="ca>
                 <div class="forecast-day-name" id="forecast-day">${day}</div>
                 <img src="#" width="20px" id="forecast-icon" />
                 <div class="forecast-temp-range">
                   <span class="forecast-minimum" id="forecast-minimum-temp"
-                    >13°</span
+                    >°</span
                   >
                   |
                   <span class="forecast-maximum" id="forecast-maximum-temp"
@@ -108,8 +108,16 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastInfo.innerHTML = forecastHTML;
+  console.log(response);
 }
 
+function retrieveForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "2483b9871977b242d98bead7f2cafee3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 function showWeatherValues(position) {
   console.log(position);
   document.querySelector("#city-heading").innerHTML = position.data.name;
@@ -149,6 +157,8 @@ function showWeatherValues(position) {
   let todaysDescriptionSentence = document.querySelector("#todays-description");
   todaysDescriptionSentence.innerHTML = `Today's weather shows ${todaysDescriptionInfo}`;
   timeHeading.innerHTML = formatDate(dateTime);
+
+  retrieveForecast(position.data.coord);
 }
 //Current time Display
 let dateTime = new Date();
@@ -162,7 +172,6 @@ searchForm.addEventListener("submit", searchSubmission);
 let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
-displayForecast();
 searchCity("Quezon City");
 
 // function convertFahrenheit(event) {
