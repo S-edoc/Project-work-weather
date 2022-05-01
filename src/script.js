@@ -109,7 +109,7 @@ function displayForecast(response) {
                 <div>
                   <i class="fa-solid fa-umbrella"></i
                   ><span class="forecast-rain" id="forecast-prob-of-rain"
-                    >10%</span
+                    >${Math.round(forecastValue.pop * 100)}%</span
                   >
                 </div>
               </div>
@@ -120,6 +120,29 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastInfo.innerHTML = forecastHTML;
+  document.querySelector("#today-minimum-value").innerHTML = Math.round(
+    forecast[0].temp.min
+  );
+  document.querySelector("#today-maximum-value").innerHTML = Math.round(
+    forecast[0].temp.max
+  );
+  document.querySelector("#tomorrow-minimum-value").innerHTML = Math.round(
+    forecast[1].temp.min
+  );
+  document.querySelector("#tomorrow-maximum-value").innerHTML = Math.round(
+    forecast[1].temp.max
+  );
+  document.querySelector("#tomorrow-sunrise-time").innerHTML = formatTime(
+    forecast[1].sunrise
+  );
+  document.querySelector("#tomorrow-sunset-time").innerHTML = formatTime(
+    forecast[1].sunset
+  );
+  document.querySelector("#tomorrow-humidity-value").innerHTML =
+    forecast[1].humidity;
+  document.querySelector("#tomorrow-wind-speed").innerHTML = Math.round(
+    forecast[1].wind_speed
+  );
   console.log(response);
 }
 
@@ -138,12 +161,6 @@ function showWeatherValues(position) {
   )}°C`;
   celciusTemperature = position.data.main.temp;
 
-  document.querySelector("#today-minimum-value").innerHTML = Math.round(
-    position.data.main.temp_min
-  );
-  document.querySelector("#today-maximum-value").innerHTML = Math.round(
-    position.data.main.temp_max
-  );
   document.querySelector("#today-feels-like-value").innerHTML = Math.round(
     position.data.main.feels_like
   );
