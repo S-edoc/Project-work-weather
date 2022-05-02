@@ -35,7 +35,6 @@
           class="form-control search-bar"
           id="search-bar-input"
         />
-
         <input
           type="submit"
           value="Search"
@@ -62,23 +61,41 @@
                     <div class="titles" id="today-maximum">Maximum</div>
                     <div class="titles" id="today-feels-like">Feels Like</div>
                     <br />
-                    <div class="titles">Sunrise</div>
-                    <div class="titles">Sunset</div>
+                    <div class="titles">
+                      Sunrise<span class="timezone"> (UTC+10)</span>
+                    </div>
+                    <div class="titles">
+                      Sunset<span class="timezone"> (UTC+10)</span>
+                    </div>
                     <br />
                     <div class="titles">Humidity</div>
                     <div class="titles">Wind Speed</div>
                     <br />
                   </div>
                   <div class="col-6 todays-numbers">
-                    <div><span id="today-minimum-value"></span>°C</div>
-                    <div><span id="today-maximum-value"></span>°C</div>
-                    <div><span id="today-feels-like-value"></span>°C</div>
+                    <div>
+                      <span class="values" id="today-minimum-value"></span>°C
+                    </div>
+                    <div>
+                      <span class="values" id="today-maximum-value"></span>°C
+                    </div>
+                    <div>
+                      <span class="values" id="today-feels-like-value"></span>°C
+                    </div>
                     <br />
-                    <div><span id="today-sunrise-time"></span></div>
-                    <div><span id="today-sunset-time"></span></div>
+                    <div>
+                      <span class="values" id="today-sunrise-time"></span>
+                    </div>
+                    <div>
+                      <span class="values" id="today-sunset-time"></span>
+                    </div>
                     <br />
-                    <div><span id="today-humidity-value"></span>%</div>
-                    <div><span id="today-wind-speed"></span> km/hr</div>
+                    <div>
+                      <span class="values" id="today-humidity-value"></span>%
+                    </div>
+                    <div>
+                      <span class="values" id="today-wind-speed"></span> km/hr
+                    </div>
                     <br />
                   </div>
                 </div>
@@ -91,10 +108,10 @@
               <div class="row">
                 <div class="col-5 current-temp" id="current-temperature"></div>
                 <div class="col-7 todays-icon-description">
-                  <img id="todays-icon" src="" />
-                  <div class="todays-description" id="todays-description"></div>
+                  <img class="icon-today" id="todays-icon" src="" />
                 </div>
               </div>
+              <div class="todays-description" id="todays-description"></div>
             </div>
             <div class="col-3">
               <div class="shadow-sm p-3 rounded tomorrow-box">
@@ -106,23 +123,40 @@
                     <div class="titles" id="tomorrow-maximum">Maximum</div>
                     <br />
                     <br />
-                    <div class="titles">Sunrise</div>
-                    <div class="titles">Sunset</div>
+                    <div class="titles">
+                      Sunrise<span class="timezone"> (UTC+10)</span>
+                    </div>
+                    <div class="titles">
+                      Sunset<span class="timezone"> (UTC+10)</span>
+                    </div>
                     <br />
                     <div class="titles">Humidity</div>
                     <div class="titles">Wind Speed</div>
                     <br />
                   </div>
                   <div class="col-6 tomorrows-numbers">
-                    <div><span id="tomorrow-minimum-value"></span>°C</div>
-                    <div><span id="tomorrow-maximum-value"></span>°C</div>
+                    <div>
+                      <span class="values" id="tomorrow-minimum-value"></span>°C
+                    </div>
+                    <div>
+                      <span class="values" id="tomorrow-maximum-value"></span>°C
+                    </div>
                     <br />
                     <br />
-                    <div><span id="tomorrow-sunrise-time"></span></div>
-                    <div><span id="tomorrow-sunset-time"></span></div>
+                    <div>
+                      <span class="values" id="tomorrow-sunrise-time"></span>
+                    </div>
+                    <div>
+                      <span class="values" id="tomorrow-sunset-time"></span>
+                    </div>
                     <br />
-                    <div><span id="tomorrow-humidity-value"></span>%</div>
-                    <div><span id="tomorrow-wind-speed"></span> km/hr</div>
+                    <div>
+                      <span class="values" id="tomorrow-humidity-value"></span>%
+                    </div>
+                    <div>
+                      <span class="values" id="tomorrow-wind-speed"></span>
+                      km/hr
+                    </div>
                     <br />
                   </div>
                 </div>

@@ -32,7 +32,7 @@ function formatDate(date) {
   let currentHour = String(date.getHours()).padStart(2, "0");
   let currentMinute = String(date.getMinutes()).padStart(2, "0");
 
-  let currentDateTime = `${currentDay} ${currentMonth} ${currentDate}, ${currentYear} </br> Last Updated ${currentHour}:${currentMinute}`;
+  let currentDateTime = `${currentDay} ${currentMonth} ${currentDate}, ${currentYear} <small>(UTC+10)</small> </br> Last Updated ${currentHour}:${currentMinute} <small>(UTC+10)</small>`;
   return currentDateTime;
 }
 
@@ -70,7 +70,7 @@ function formatTime(timestamp) {
   let date = new Date(timestamp * 1000);
   let hour = String(date.getHours()).padStart(2, "0");
   let minutes = String(date.getMinutes()).padStart(2, "0");
-  let timeDisplay = `${hour}:${minutes} `;
+  let timeDisplay = `${hour}:${minutes}`;
   return timeDisplay;
 }
 
@@ -201,4 +201,4 @@ searchForm.addEventListener("submit", searchSubmission);
 let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
-searchCity("Quezon City");
+searchCity("Narnia");
