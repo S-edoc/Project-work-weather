@@ -61,12 +61,9 @@
                     <div class="titles" id="today-maximum">Maximum</div>
                     <div class="titles" id="today-feels-like">Feels Like</div>
                     <br />
-                    <div class="titles">
-                      Sunrise<span class="timezone"> (UTC+10)</span>
-                    </div>
-                    <div class="titles">
-                      Sunset<span class="timezone"> (UTC+10)</span>
-                    </div>
+                    <div class="timezone">(As per your local time)</div>
+                    <div class="titles">Sunrise</div>
+                    <div class="titles">Sunset</div>
                     <br />
                     <div class="titles">Humidity</div>
                     <div class="titles">Wind Speed</div>
@@ -82,6 +79,7 @@
                     <div class="values">
                       <span id="today-feels-like-value"></span>°C
                     </div>
+                    <br />
                     <br />
                     <div class="values">
                       <span id="today-sunrise-time"></span>
@@ -111,7 +109,10 @@
                   <img class="icon-today" id="todays-icon" src="" />
                 </div>
               </div>
-              <div class="todays-description" id="todays-description"></div>
+              <div class="current-description">
+                The current weather :
+                <span class="todays-description" id="todays-description"></span>
+              </div>
             </div>
             <div class="col-3">
               <div class="shadow-sm p-3 rounded tomorrow-box">
@@ -123,12 +124,9 @@
                     <div class="titles" id="tomorrow-maximum">Maximum</div>
                     <br />
                     <br />
-                    <div class="titles">
-                      Sunrise<span class="timezone"> (UTC+10)</span>
-                    </div>
-                    <div class="titles">
-                      Sunset<span class="timezone"> (UTC+10)</span>
-                    </div>
+                    <div class="timezone">(As per your local time)</div>
+                    <div class="titles">Sunrise</div>
+                    <div class="titles">Sunset</div>
                     <br />
                     <div class="titles">Humidity</div>
                     <div class="titles">Wind Speed</div>
@@ -141,6 +139,7 @@
                     <div class="values">
                       <span id="tomorrow-maximum-value"></span>°C
                     </div>
+                    <br />
                     <br />
                     <br />
                     <div class="values">

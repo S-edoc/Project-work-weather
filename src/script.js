@@ -32,7 +32,7 @@ function formatDate(date) {
   let currentHour = String(date.getHours()).padStart(2, "0");
   let currentMinute = String(date.getMinutes()).padStart(2, "0");
 
-  let currentDateTime = `${currentDay} ${currentMonth} ${currentDate}, ${currentYear} <small>(UTC+10)</small> </br> Last Updated ${currentHour}:${currentMinute} <small>(UTC+10)</small>`;
+  let currentDateTime = `${currentDay} ${currentMonth} ${currentDate}, ${currentYear} <small>(As per your local time)</small> </br> Last Updated ${currentHour}:${currentMinute}`;
   return currentDateTime;
 }
 
@@ -181,14 +181,14 @@ function showWeatherValues(position) {
 
   let todaysDescriptionInfo = position.data.weather[0].description;
   let todaysDescriptionSentence = document.querySelector("#todays-description");
-  todaysDescriptionSentence.innerHTML = `The current weather : <span class="describe">${todaysDescriptionInfo}</span>`;
+  todaysDescriptionSentence.innerHTML = `${todaysDescriptionInfo}`;
+  let timeHeading = document.querySelector("#time-current");
   timeHeading.innerHTML = formatDate(dateTime);
 
   retrieveForecast(position.data.coord);
 }
 //Current time Display
 let dateTime = new Date();
-let timeHeading = document.querySelector("#time-current");
 
 //City Search Display
 let searchForm = document.querySelector("#search-form");
@@ -198,4 +198,4 @@ searchForm.addEventListener("submit", searchSubmission);
 let currentButton = document.querySelector("#current-search-button");
 currentButton.addEventListener("click", findPosition);
 
-searchCity("Narnia");
+searchCity("Sunshine Coast");

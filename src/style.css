@@ -42,11 +42,14 @@ h5 {
 }
 .timezone {
   font-size: 12px;
+  line-height: 24px;
 }
+
 .values {
   font-size: 18px;
   text-align: center;
 }
+
 .current-temp {
   font-weight: 900px;
   font-size: 100px;
@@ -57,15 +60,16 @@ h5 {
   margin: 0 auto;
   width: 150px;
 }
+
 .todays-description,
-.current-weather-icon {
+.current-description {
   text-align: center;
-}
-
-.todays-description {
   font-size: 30px;
+  margin-top: 24px;
 }
-
+.todays-description {
+  text-transform: capitalize;
+}
 .current-weather-icon {
   display: block;
   margin-top: 30px;
