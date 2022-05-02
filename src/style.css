@@ -13,29 +13,26 @@ h5 {
 }
 
 .search-bar {
-  display: block;
-  margin: 0 auto;
-  margin-top: 40px;
+  display: inline;
+  margin-top: 30px;
   margin-bottom: 20px;
-  max-width: 50%;
+  margin-left: 330px;
+  margin-right: 20px;
+  max-width: 30%;
   padding: 10px;
 }
-.search-button {
-  position: relative;
-  left: 980px;
-  top: -60px;
+
+.buttons-wrap {
+  margin: 10px 500px;
 }
 
-.current-button {
-  position: relative;
-  left: 1000px;
-  top: -60px;
-}
-
-.todays-info-container {
+.todays-box,
+.tomorrow-box {
   border: solid 0 #fff;
   border-radius: 20px;
+  background-color: #fff;
 }
+
 .todays-heading,
 .tomorrow-heading {
   margin-top: 0px;
