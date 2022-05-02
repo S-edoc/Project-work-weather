@@ -143,18 +143,15 @@ function displayForecast(response) {
   document.querySelector("#tomorrow-wind-speed").innerHTML = Math.round(
     forecast[1].wind_speed
   );
-  console.log(response);
 }
 
 function retrieveForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "2483b9871977b242d98bead7f2cafee3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 function showWeatherValues(position) {
-  console.log(position);
   document.querySelector("#city-heading").innerHTML = position.data.name;
   document.querySelector("#current-temperature").innerHTML = `${Math.round(
     position.data.main.temp
@@ -184,7 +181,7 @@ function showWeatherValues(position) {
 
   let todaysDescriptionInfo = position.data.weather[0].description;
   let todaysDescriptionSentence = document.querySelector("#todays-description");
-  todaysDescriptionSentence.innerHTML = `The current weather shows ${todaysDescriptionInfo}`;
+  todaysDescriptionSentence.innerHTML = `The current weather : <span class="describe">${todaysDescriptionInfo}</span>`;
   timeHeading.innerHTML = formatDate(dateTime);
 
   retrieveForecast(position.data.coord);
